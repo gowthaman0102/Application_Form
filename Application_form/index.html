@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Job application form with real-time validation and a modern glassmorphism design." />
+  <title>Apply Now — Job Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+  </div>
+
+  <main class="container">
+    <div class="card">
+      <!-- Header -->
+      <header class="card__header">
+
+        <h1 class="card__title">Apply Now</h1>
+        <p class="card__subtitle">Fill out the form below.</p>
+      </header>
+
+      <!-- Form -->
+      <form id="applicationForm" class="form" novalidate>
+        <!-- Name -->
+        <div class="form__group" id="group-name">
+          <label class="form__label" for="name">
+            Full Name
+          </label>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Gowthaman" autocomplete="name" />
+          <span class="form__error" id="error-name"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form__group" id="group-email">
+          <label class="form__label" for="email">
+            Email Address
+          </label>
+          <input class="form__input" type="email" id="email" name="email" placeholder="gowthamanseenivasan0@gmail.com" autocomplete="email" />
+          <span class="form__error" id="error-email"></span>
+        </div>
+
+        <!-- Phone -->
+        <div class="form__group" id="group-phone">
+          <label class="form__label" for="phone">
+            Phone Number
+          </label>
+          <input class="form__input" type="tel" id="phone" name="phone" placeholder="+91 99999 99999" autocomplete="tel" />
+          <span class="form__error" id="error-phone"></span>
+        </div>
+
+        <!-- Message -->
+        <div class="form__group" id="group-message">
+          <label class="form__label" for="message">
+            Your Message
+          </label>
+          <textarea class="form__input form__input--textarea" id="message" name="message" rows="4" placeholder="Type your message here"></textarea>
+          <div class="form__meta">
+            <span class="form__error" id="error-message"></span>
+            <span class="form__char-count" id="char-count">0 / 500</span>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button class="form__btn" type="submit" id="submitBtn">
+          <span class="form__btn-text">Submit Application</span>
+          <span class="form__btn-loader" aria-hidden="true"></span>
+          <svg class="form__btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </form>
+
+      <!-- Success overlay -->
+      <div class="success" id="successOverlay" aria-live="polite">
+        <div class="success__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h2 class="success__title">Application Sent!</h2>
+        <p class="success__text">Thank you for applying. We'll review your submission and get back to you shortly.</p>
+        <button class="success__btn" id="resetBtn" type="button">Submit Another</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
